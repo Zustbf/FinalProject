@@ -30,15 +30,26 @@ class mainScene {
     //sounds
 
     this.jumpSound = this.sound.add('jump');
-    this.coinSound = this.sound.add('coinping')
+    this.coinSound = this.sound.add('coinping');
     //this.jumpConfig = {
       
     //}
 
     // platforms
-    //this.platforms = this.physics.add.sprite(100,300, 'platform');
-    
-    
+
+    this.platforms = this.physics.add.staticGroup();
+    //this.platforms.immovable = true;
+    //this.platforms.allowGravity = false;
+
+    this.platforms.create(250,400,'platform');
+    this.platforms.create(100,500,'platform');
+    /* Testing Platform
+    this.platform1 = this.physics.add.staticImage(250,500,'platform');
+    this.platform1.immovable = true;
+    this.platform1.allowGravity = false;
+    */
+
+
     this.score = 0;
 
     let style = { font: '20px Arial', fill: '#fff' };
@@ -48,7 +59,9 @@ class mainScene {
     this.arrow = this.input.keyboard.createCursorKeys();
   }
   update() {
-    //game.physics.arcade.collide(player, platforms);
+    // Collider so that the platforms are solid ground for the player
+    this.physics.add.collider(this.player, this.platforms);
+
     // If the player is overlapping with the coin
     if (this.physics.overlap(this.player, this.coin)) {
       this.hit();
@@ -83,7 +96,7 @@ class mainScene {
   }
   hit() {
     // Change the position x and y of the coin randomly, while making sure the coin can still be grabbed. This is just for the test level, as the coins will be placed in specific locations in the levels
-    this.coin.x = Phaser.Math.Between(100, 900);
+    this.coin.x = Phaser.Math.Between(300, 900);
     this.coin.y = Phaser.Math.Between(430, 520);
     
     if (this.arrow.up.isDown){
