@@ -68,13 +68,17 @@ class mainScene {
     if (this.arrow.down.isDown) {
       this.player.y += 3;
     } else if (this.arrow.up.isDown) {
-      this.player.y -= 3;
+      if (this.player.body.onFloor() || this.player.body.touching.down) {
+        //this.player.y -= 30;
+        this.player.setVelocity(0, -180);
+        this.jumpSound.play();
+      }
       //this.jumpSound.play();
       //setTimeout(() => {this.jumpSound.stop(); }, 100)
     } 
   }
   hit() {
-    // Change the position x and y of the coin randomly
+    // Change the position x and y of the coin randomly, while making sure the coin can still be grabbed. This is just for the test level, as the coins will be placed in specific locations in the levels
     this.coin.x = Phaser.Math.Between(100, 900);
     this.coin.y = Phaser.Math.Between(430, 520);
   
