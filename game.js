@@ -53,6 +53,10 @@ class mainScene {
     if (this.physics.overlap(this.player, this.coin)) {
       this.hit();
       this.coinSound.play();
+      if (this.arrow.up.isDown) {
+        this.player.setVelocity(0, -180);
+        this.jumpSound.play();
+      }
     }
     
     // Handle horizontal movements
@@ -81,10 +85,14 @@ class mainScene {
     // Change the position x and y of the coin randomly, while making sure the coin can still be grabbed. This is just for the test level, as the coins will be placed in specific locations in the levels
     this.coin.x = Phaser.Math.Between(100, 900);
     this.coin.y = Phaser.Math.Between(430, 520);
-  
+    
+    if (this.arrow.up.isDown){
+      // Increment the score by 5
+    this.score += 5;
+    } else {
     // Increment the score by 10
     this.score += 10;
-  
+    }
     // Display the updated score on the screen
     this.scoreText.setText('score: ' + this.score);
 
