@@ -43,6 +43,7 @@ class mainScene {
 
     this.platforms.create(250,400,'platform');
     this.platforms.create(100,500,'platform');
+    
     /* Testing Platform
     this.platform1 = this.physics.add.staticImage(250,500,'platform');
     this.platform1.immovable = true;
@@ -61,6 +62,12 @@ class mainScene {
   update() {
     // Collider so that the platforms are solid ground for the player
     this.physics.add.collider(this.player, this.platforms);
+    this.player.body.velocity.x = 0;
+
+    //if (this.player.body.touching.platforms) {
+    //  this.player.body.velocity.x = 0;
+    //}
+
 
     // If the player is overlapping with the coin
     if (this.physics.overlap(this.player, this.coin)) {
@@ -126,7 +133,8 @@ new Phaser.Game({
   height: 550, 
   backgroundColor: '#3498db', 
   scene: mainScene, 
-  physics: { default: 'arcade' }, 
+  physics: { default: 'arcade',
+    arcade: {debug: true} }, 
   parent: 'game', 
   pixelArt: true
 });
