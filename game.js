@@ -128,4 +128,5 @@ new Phaser.Game({
   scene: mainScene, 
   physics: { default: 'arcade' }, 
   parent: 'game', 
+  pixelArt: true
 });
