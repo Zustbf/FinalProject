@@ -27,6 +27,7 @@ class mainScene {
       repeat: -1
     });
     this.player.play("ballanim");
+    this.player.setBounce(0.1);
     //sounds
 
     this.jumpSound = this.sound.add('jump');
@@ -82,10 +83,10 @@ class mainScene {
     // Handle horizontal movements
     if (this.arrow.right.isDown) {
       // If the right arrow is pressed, move to the right
-      this.player.x += 3;
+      this.player.body.velocity.x = 50;
     } else if (this.arrow.left.isDown) {
     // If the left arrow is pressed, move to the left
-      this.player.x -= 3;
+      this.player.body.velocity.x = -50;
     } 
 
     //vertical movements
