@@ -84,10 +84,10 @@ class mainScene {
     // Handle horizontal movements
     if (this.arrow.right.isDown) {
       // If the right arrow is pressed, move to the right
-      this.player.body.velocity.x += 50;
+      this.player.body.velocity.x += 100;
     } else if (this.arrow.left.isDown) {
     // If the left arrow is pressed, move to the left
-      this.player.body.velocity.x -= 50;
+      this.player.body.velocity.x -= 100;
     } 
 
     //vertical movements
