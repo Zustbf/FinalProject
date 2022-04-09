@@ -11,6 +11,14 @@ class mainScene {
     frameWidth: 16,
     frameHeight: 16
   });
+  this.load.spritesheet('bloo', 'assets/bloo.png',{
+    frameWidth: 16,
+    frameHeight: 16
+  });
+  this.load.spritesheet('redd', 'assets/redd.png',{
+    frameWidth: 16,
+    frameHeight: 16
+  });
   }
   create() {
     this.background = this.add.image(0,0,'testBackground');
@@ -19,6 +27,8 @@ class mainScene {
     this.coin = this.physics.add.sprite(32, 528, 'coin');
     this.player.body.collideWorldBounds = true;
     this.player.body.gravity.y = 150;
+    this.bloo = this.physics.add.sprite(50, 100, 'bloo');
+    this.redd = this.physics.add.sprite(100, 100, 'redd');
     //animation for ball
     this.anims.create({
       key: 'ballanim',
@@ -28,6 +38,25 @@ class mainScene {
     });
     this.player.play("ballanim");
     this.player.setBounce(0.1);
+    //animation for 2 characters
+    this.anims.create({
+      key: 'blooanim',
+      frames: this.anims.generateFrameNumbers('bloo'),
+      frameRate: 10,
+      repeat: -1
+    });
+    this.bloo.play("blooanim");
+    this.bloo.setBounce(0.1);
+
+    this.anims.create({
+      key: 'reddanim',
+      frames: this.anims.generateFrameNumbers('redd'),
+      frameRate: 10,
+      repeat: -1
+    });
+    this.redd.play("reddanim");
+    this.bloo.setBounce(0.1);
+
     //sounds
 
     this.jumpSound = this.sound.add('jump');
