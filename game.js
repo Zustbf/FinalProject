@@ -64,11 +64,12 @@ class mainScene {
     // Collider so that the platforms are solid ground for the player
     this.physics.add.collider(this.player, this.platforms);
     this.player.body.velocity.x = 0;
-
-    //if (this.player.body.touching.platforms) {
-    //  this.player.body.velocity.x = 0;
-    //}
-
+    /*
+    if (this.player.body.velocity.x > 50) {
+      this.player.body.velocity.x -= 3;
+    } else if (this.player.body.velocity.x < -50) {
+      this.player.body.velocity.x += 3;
+    }*/
 
     // If the player is overlapping with the coin
     if (this.physics.overlap(this.player, this.coin)) {
@@ -83,19 +84,19 @@ class mainScene {
     // Handle horizontal movements
     if (this.arrow.right.isDown) {
       // If the right arrow is pressed, move to the right
-      this.player.body.velocity.x = 50;
+      this.player.body.velocity.x += 50;
     } else if (this.arrow.left.isDown) {
     // If the left arrow is pressed, move to the left
-      this.player.body.velocity.x = -50;
+      this.player.body.velocity.x -= 50;
     } 
 
     //vertical movements
     if (this.arrow.down.isDown) {
-      this.player.y += 3;
+      this.player.body.velocity.y += 3;
     } else if (this.arrow.up.isDown) {
       if (this.player.body.onFloor() || this.player.body.touching.down) {
         //this.player.y -= 30;
-        this.player.setVelocity(0, -180);
+        this.player.body.velocity.y = -180;
         this.jumpSound.play();
       }
       //this.jumpSound.play();
