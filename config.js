@@ -4,7 +4,8 @@ new Phaser.Game({
   backgroundColor: '#3498db', 
   scene: mainScene, 
   physics: { default: 'arcade',
-    arcade: {debug: true} }, 
+    arcade: {debug: true} 
+  }, 
   parent: 'game', 
   pixelArt: true
 });
