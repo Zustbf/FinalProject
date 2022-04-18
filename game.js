@@ -1,5 +1,7 @@
-class mainScene {
-  
+class mainScene extends Phaser.Scene {
+  constructor() {
+    super("playGame");
+  }
   preload() {
     this.load.image('player', 'assets/ghost.png');
     this.load.image('coin', 'assets/coin.png');
