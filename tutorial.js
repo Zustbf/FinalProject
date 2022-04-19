@@ -27,7 +27,7 @@ class tutorial extends Phaser.Scene {
     this.bloo = this.physics.add.sprite(50, 100, 'bloo');
     this.bloo.body.collideWorldBounds = true;
     this.bloo.body.gravity.y = 150;
-    this.redd = this.physics.add.sprite(100, 530, 'redd');
+    this.redd = this.physics.add.sprite(400, 430, 'redd');
     this.redd.body.collideWorldBounds = true;
     this.redd.body.gravity.y = 150;
     this.keyW = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
