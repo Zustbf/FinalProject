@@ -64,7 +64,7 @@ class tutorial extends Phaser.Scene {
     this.walls = this.physics.add.staticGroup();
 
     this.walls.create(290,338,'wall');
-    this.walls.create(141,446,'wall');
+    this.walls.create(142,446,'wall');
     
 
     // platforms
@@ -72,7 +72,7 @@ class tutorial extends Phaser.Scene {
     this.platforms = this.physics.add.staticGroup();
 
     this.platforms.create(216,392,'platform');
-    this.platforms.create(66,500,'platform');
+    this.platforms.create(68,500,'platform');
     this.platforms.create(364,284,'platform');
     this.platforms.create(364,490,'platform');
     this.platforms.create(492,284,'platform');
