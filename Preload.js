@@ -9,6 +9,6 @@ class preloadGame extends Phaser.Scene {
 
   create() {
     this.add.text(20,20,"Loading Game...");
-    this.scene.start("tutorial");
+    this.scene.start("intro");
   }
 }
