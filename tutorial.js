@@ -167,6 +167,11 @@ class tutorial extends Phaser.Scene {
         this.jumpSound.play();
       }
     }
+    // move to next scene (level 1)
+    if (this.physics.overlap(this.redd, this.bloo)) {
+      this.game.config.globalScore === this.score;
+      this.scene.start("Level1");
+    }
   }
   hit() {
     // Change the position x and y of the coin randomly, while making sure the coin can still be grabbed. This is just for the test level, as the coins will be placed in specific locations in the levels
