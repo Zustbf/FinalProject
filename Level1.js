@@ -9,11 +9,11 @@ class Level1 extends Phaser.Scene {
   create() {
     this.background = this.add.image(0,0,'Background1');
     this.background.setOrigin(0,0);
-    this.coin = this.physics.add.sprite(32, 528, 'coin');
-    this.bloo = this.physics.add.sprite(50, 100, 'bloo');
+    this.coin = this.physics.add.sprite(645, 357, 'coin');
+    this.bloo = this.physics.add.sprite(50, 500, 'bloo');
     this.bloo.body.collideWorldBounds = true;
     this.bloo.body.gravity.y = 150;
-    this.redd = this.physics.add.sprite(400, 430, 'redd');
+    this.redd = this.physics.add.sprite(769, 407, 'redd');
     this.redd.body.collideWorldBounds = true;
     this.redd.body.gravity.y = 150;
     this.keyW = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
@@ -48,25 +48,42 @@ class Level1 extends Phaser.Scene {
     // walls
 
     this.walls = this.physics.add.staticGroup();
-
-    this.walls.create(0,0,'wall');
-
-    
+    this.walls.setOrigin(0,0);
+    this.walls.create(115,486,'wall');
+    this.walls.create(115,358,'wall');
+    this.walls.create(115,230,'wall');
+    this.walls.create(810,310,'wall');
+    this.walls.create(810,438,'wall');
+    this.walls.create(574,398,'wall');
+    this.walls.create(731,398,'wall');
 
     // platforms
 
     this.platforms = this.physics.add.staticGroup();
-
-    this.platforms.create(0,0,'platform');
+    this.platforms.setOrigin(0,0);
+    this.platforms.create(116,452,'platform');
+    this.platforms.create(116,344,'platform');
+    this.platforms.create(116,246,'platform');
+    this.platforms.create(244,246,'platform');
+    this.platforms.create(372,246,'platform');
+    this.platforms.create(500,246,'platform');
+    this.platforms.create(628,246,'platform');
+    this.platforms.create(756,246,'platform');
+    this.platforms.create(372,452,'platform');
+    this.platforms.create(500,452,'platform');
+    this.platforms.create(628,452,'platform');
+    this.platforms.create(756,452,'platform');
+    this.platforms.create(244,344,'platform');
+    this.platforms.create(500,344,'platform');
 
     // barriers
-    this.blueBarriers = this.physics.add.staticGroup();
-
-    this.blueBarriers.create(0,0,'blueBarrier');
+    //this.blueBarriers = this.physics.add.staticGroup();
+  
+    //this.blueBarriers.create(244,452,'blueBarrier');
 
     this.redBarriers = this.physics.add.staticGroup();
 
-    this.redBarriers.create(0,0,'redBarrier');
+    this.redBarriers.create(810,526,'redBarrier');
     //score
     this.score === this.game.config.globalScore;
 
@@ -75,8 +92,6 @@ class Level1 extends Phaser.Scene {
     // Display the score in the top left corner
     this.scoreText = this.add.text(10, 10, 'score: ' + this.score, style);
     this.arrow = this.input.keyboard.createCursorKeys();
-
-    this.add.text(100, 100, 'Level designing is still in progress, sorry!', style);
 
     this.test = -1000;
   }
@@ -145,7 +160,7 @@ class Level1 extends Phaser.Scene {
     }
     // move to next scene (level 1)
     if (this.physics.overlap(this.redd, this.bloo)) {
-      this.scene.start("Level1");
+      this.scene.start("Level2");
     }
   }
   hit() {
