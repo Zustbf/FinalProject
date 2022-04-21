@@ -3,7 +3,7 @@ class Level1 extends Phaser.Scene {
     super("Level1");
   }
   preload() {
-  this.load.image('Background1', 'assets/background_final.png');
+
 
   }
   create() {

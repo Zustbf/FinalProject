@@ -3,22 +3,7 @@ class tutorial extends Phaser.Scene {
     super("tutorial");
   }
   preload() {
-    this.load.image('coin', 'assets/coin.png');
-    this.load.image('platform', 'assets/platform.png');
-    this.load.image('wall', 'assets/wall.png');
-    this.load.image('Background', 'assets/background_tutorial.png');
-    this.load.image('redBarrier', 'assets/red_barrier.png');
-    this.load.image('blueBarrier', 'assets/blue_barrier.png');
-    this.load.audio('coinping', 'assets/coin.mp3');
-    this.load.audio('jump', 'assets/jump.mp3');
-  this.load.spritesheet('bloo', 'assets/bloo.png',{
-    frameWidth: 16,
-    frameHeight: 16
-  });
-  this.load.spritesheet('redd', 'assets/redd.png',{
-    frameWidth: 16,
-    frameHeight: 16
-  });
+
   }
   create() {
     this.background = this.add.image(0,0,'Background');
