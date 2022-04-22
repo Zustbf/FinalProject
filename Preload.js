@@ -22,6 +22,7 @@ class preloadGame extends Phaser.Scene {
     frameHeight: 16
   });
   this.load.image('Background1', 'assets/background_final.png');
+  this.load.image('BackgroundEnd', 'assets/background_end.png');
   }
 
   create() {

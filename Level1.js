@@ -85,12 +85,11 @@ class Level1 extends Phaser.Scene {
 
     this.redBarriers.create(810,526,'redBarrier');
     //score
-    this.score === this.game.config.globalScore;
 
     let style = { font: '20px Arial', fill: '#000' };
 
     // Display the score in the top left corner
-    this.scoreText = this.add.text(10, 10, 'score: ' + this.score, style);
+    this.scoreText = this.add.text(10, 10, 'score: ' + score, style);
     this.arrow = this.input.keyboard.createCursorKeys();
 
     this.test = -1000;
@@ -98,9 +97,9 @@ class Level1 extends Phaser.Scene {
   update() {
     this.test += 1;
     if (this.test > 90 && this.score > 0) {
-      this.score -= 1;
+      score -= 1;
       this.test -= 90;
-      this.scoreText.setText('score: ' + this.score);
+      this.scoreText.setText('score: ' + score);
     }
     // Collider so that the platforms and walls are solid ground for the player characters
     this.physics.add.collider(this.bloo, this.platforms);
@@ -171,13 +170,13 @@ class Level1 extends Phaser.Scene {
     
     if (this.arrow.up.isDown){
       // Increment the score by 5
-    this.score += 50;
+    score += 50;
     } else {
     // Increment the score by 10
-    this.score += 100;
+    score += 100;
     }
     // Display the updated score on the screen
-    this.scoreText.setText('score: ' + this.score);
+    this.scoreText.setText('score: ' + score);
 
     this.tweens.add({
       targets: this.redd, 
