@@ -80,7 +80,8 @@ class tutorial extends Phaser.Scene {
     //score
     
     let style = { font: '20px Arial', fill: '#000' };
-
+    // score
+    score = 100;
     // Display the score in the top left corner
     this.scoreText = this.add.text(10, 10, 'score: ' + score, style);
     this.arrow = this.input.keyboard.createCursorKeys();

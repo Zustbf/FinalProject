@@ -98,13 +98,13 @@ class Level3 extends Phaser.Scene {
     this.scoreText = this.add.text(10, 10, 'score: ' + score, style);
     this.arrow = this.input.keyboard.createCursorKeys();
 
-    this.test = -1000;
+    this.test = -1120;
   }
   update() {
     this.test += 1;
-    if (this.test > 90 && score > 0) {
+    if (this.test > 45 && score > 0) {
       score -= 1;
-      this.test -= 90;
+      this.test -= 45;
       this.scoreText.setText('score: ' + score);
     }
     // Collider so that the platforms and walls are solid ground for the player characters

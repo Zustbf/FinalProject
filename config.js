@@ -1,4 +1,4 @@
-var score = 100;
+var score;
 new Phaser.Game({
   width: 950, 
   height: 550, 

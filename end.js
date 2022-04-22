@@ -15,6 +15,8 @@ class endScene extends Phaser.Scene {
 
     // Display the score in the top left corner
     this.scoreText = this.add.text(10, 10, 'score: ' + score, style);
+    // say max score
+    this.add.text(10, 50, 'Max score: 500', style);
     this.arrow = this.input.keyboard.createCursorKeys();
   }
   update() {

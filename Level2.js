@@ -106,9 +106,9 @@ class Level2 extends Phaser.Scene {
   }
   update() {
     this.test += 1;
-    if (this.test > 90 && score > 0) {
+    if (this.test > 50 && score > 0) {
       score -= 1;
-      this.test -= 90;
+      this.test -= 50;
       this.scoreText.setText('score: ' + score);
     }
     // Collider so that the platforms and walls are solid ground for the player characters
